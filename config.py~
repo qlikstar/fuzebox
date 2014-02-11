@@ -1,0 +1,8 @@
+database    = ':memory:' 
+createtable = 'CREATE TABLE GAMEDATA (Id INTEGER PRIMARY KEY ,GameId INTEGER, GroupID INTEGER, PosId INTEGER, PlayerName TEXT , Points INTEGER)'
+query       = 'select * from gamedata'
+filename    = 'game_data.txt'
+header      = ('Groupid' , 'PlayerName' , 'TotalGames' , 'TotalPoints' , 'SuccessPercent' )
+analytics_query = 'select groupid,  playername , count(1) as totalgames , sum(points) as totalpoints , cast(sum(points *100) as float)/cast(count(1) as float) as success_percent from gamedata group by groupid, playername order by sum(points) desc limit 30;'
+jsonoutput = 'output.json'
+

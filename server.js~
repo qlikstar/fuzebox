@@ -1,0 +1,7 @@
+
+
+var rest = require('./restler');
+
+rest.get('http://localhost:5000/fuzebox/analytics/groups/2').on('complete', function(data) {
+  console.log(data[0].message); // auto convert to object
+});

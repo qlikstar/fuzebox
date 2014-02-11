@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Blogger JSON API Example</title>
+  </head>
+  <body>
+
+	<h1>My First Web Page</h1>
+
+	<p id="demo">My First Paragraph</p>
+    <div id="content"></div>
+    <script>
+      function handleResponse(response) {
+        document.getElementById("content").innerHTML += "<h1>" + response.title + "</h1>" + response.content;
+      }
+    </script>
+    <script
+    src="http://localhost:5000/fuzebox/analytics/groups/2"></script>
+<script>
+document.write(response);
+</script>
+  </body>
+</html>
